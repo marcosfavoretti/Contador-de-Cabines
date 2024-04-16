@@ -1,0 +1,8 @@
+::ng-deep .p-progressbar-value {
+    background-color: gray;
+}
+
+#background {
+    background: linear-gradient(to top right, rgb(33, 37, 41) 70%, rgb(76, 76, 76) 30%);
+    /* rgb(33, 37, 41) */
+}

@@ -1,0 +1,32 @@
+<div class="position-absolute top-0">
+    <div class="">
+        <img class="img-contain" src="../../assets/logo.png" alt="" width="100px">
+    </div>
+</div>
+
+<div id="background" class="w-100 h-100 d-flex align-items-center justify-content-center">
+    <div class="p-3">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-white text-center counter-responsive counter-font">Contador de cabines</h1>
+            </div>
+            <div class="col-12 mb-3">
+                <div class="row">
+                    <div class="col-2" *ngFor="let num of counter.a_count; let i = index; trackBy: trackByIndex">
+                        <div [@openClose]="valueChangedFlags[i] ? 'open' : 'closed'"
+                            class="d-flex align-items-center justify-content-center"
+                            [class]="num === '.'? 'bg-dark' : 'bg-white shadow-lg rounded'">
+                            <h1 class="text-center text-secondary counter-responsive counter-font">
+                                {{num}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12" *ngIf="+((counter.n_count*100)/100000).toFixed(2)<100">
+                <p-progressBar [value]="+((counter.n_count*100)/100000).toFixed(2)"
+                    styleClass="bg-light"></p-progressBar>
+            </div>
+        </div>
+    </div>
+
+</div>
